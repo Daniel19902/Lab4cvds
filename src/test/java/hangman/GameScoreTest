@@ -1,0 +1,67 @@
+package Hangman;
+import hangman.model.*;
+import org.junit.Assert;
+import org.junit.Test;
+
+/**
+ * Original Score
+ Numero  	              Clase de equivalencia 		                       Resultado
+ # Letras correctas	     # Letras Incorrectas
+ 1	                   < 0		                                            Incorrecto
+ 2		                                        < 0	                        Incorrecto
+ 3	                LC >= 0	                      0	                           100
+ 4	                LC > 0	                 LI > 0  ^ LI < 11	           100 - (10 * LI)
+ 5	                LC > 0	                    LI > 11	                        0
+ */
+
+/**
+ * Bonus Score
+ Numero 	              Clase de equivalencia 		                        Resultado
+ # Letras correctas	    # Letras Incorrectas
+ 1	                   < 0 		                                                Incorrecto
+ 2		                                      < 0 	                            Incorrecto
+ 3	                  LC >= 0 	                0	                             LC * 10
+ 4	                  LC > 0 	             LI < LC 	                    (LC * 10) - (LI * 5)
+ 5	                  LC > 0 	            LI >= LC * 2 	                        0
+ */
+
+
+/**
+ * Power Score
+ Numero 	              Clase de equivalencia 		                        Resultado
+ # Letras correctas	    # Letras Incorrectas
+ 1	                    < 0 		                                            Incorrecto
+ 2		                                        < 0	                            Incorrecto
+ 3	                  LC > 0 	                  0	                        La $i-ésima$ letra correcta se bonifica con $5^i$
+ 4	                    0	                    LI > 0 	                            0
+ 5	                LC >= 4 	                  0	                                500
+ 6	                LC > 1	                    LI > 0 	                    La $i-ésima$ letra correcta se bonifica con $5^i$ - (8*LI)
+ */
+
+@Test
+public void validateInvalidParameters() {
+        GameScore game;
+        try {
+        game = new OriginalScore();
+        game.CalculateScore(-2, -3);
+        Assert.assertTrue(false);
+        } catch (GameScoreException e) {
+        Assert.assertTrue(true);
+        }
+        try {
+        game = new PowerScore();
+        game.CalculateScore(-2, -3);
+        Assert.assertTrue(false);
+        } catch (GameScoreException e) {
+        Assert.assertTrue(true);
+        }
+
+        try {
+        game = new BonusScore();
+        game.CalculateScore(-2, -3);
+        Assert.assertTrue(false);
+        } catch (GameScoreException e) {
+        Assert.assertTrue(true);
+        }
+        }
+
