@@ -9,7 +9,7 @@ public class OriginalScore implements GameScore {
      * @pos se penaliza con 10 puntos por cada letra incorrecta
      * @param correctCount numero de letras correctas
      * @param incorrectCount numero de letras incorrectas
-     * @return score
+     * @return score.
      */
 
     @Override
