@@ -5,7 +5,7 @@ public class OriginalScore implements GameScore {
     private int score = 100;
 
     /**
-     * @pre Se inicia con 100 puntos, putaje minimo 0
+     * @pre Se inicia con 100 puntos, putaje minimo 0.
      * @pos se penaliza con 10 puntos por cada letra incorrecta
      * @param correctCount numero de letras correctas
      * @param incorrectCount numero de letras incorrectas

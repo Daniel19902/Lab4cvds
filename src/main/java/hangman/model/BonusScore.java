@@ -5,7 +5,7 @@ public class BonusScore implements GameScore {
     private int score = 0;
 
     /**
-     * @pre Inicia con 0 puntos, puntaje minimo 0
+     * @pre Inicia con 0 puntos, puntaje minimo 0.
      * @pos Se bonifica con 5^numeroLetra, Se penaliza con -8 puntos cada letra incorrecta
      * @param correctCount numero de letras correctas
      * @param incorrectCount numero de letras incorrectas
