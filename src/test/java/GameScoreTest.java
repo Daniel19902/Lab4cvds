@@ -40,9 +40,9 @@ public class GameScoreTest {
  6	                       LC > 1 && LI > 1 	                    La $i-ésima$ letra correcta se bonifica con $5^i$ - (8*LI)
  */
     /**
-     * originalScore
-     * powerScore
-     * bonusScore
+     * originalScore.
+     * powerScore.
+     * bonusScore.
      */
     @Test
     public void validateInvalidParameters() {
